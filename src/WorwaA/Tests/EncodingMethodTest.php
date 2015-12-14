@@ -2,8 +2,10 @@
 
 namespace Tests;
 
-use Jkan\Component\Password\Encoder;
-use Jkan\Component\Password\Method\Md5Encoding;
+use WorwaA\Component\Password\Encoder;
+use WorwaA\Component\Password\Method\Md5Encoding;
+use WorwaA\Component\Password\Method\Sha1Encoding;
+
 
 class EncodingMethodTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,9 +24,9 @@ class EncodingMethodTest extends \PHPUnit_Framework_TestCase
 
     public function testSha1Encoding()
     {
-        //
-        // encoder should be initialized properly HERE
-        //
+        $method = new Sha1Encoding();
+        $encoder = new Encoder($method);
+
 
         $this->assertEquals(
             '2181b2633e7ae8c3e964317dbd591eee51ab7a6d',
